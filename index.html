@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FG Desentupidora e Imunização | Atendimento 24h Rio de Janeiro</title>
+    <!-- Google Fonts & FontAwesome -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        /* Reset de Estilos Básicos */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Montserrat', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        :root {
+            --primary: #0a2540;      /* Azul Escuro / Confiança e Seriedade */
+            --secondary: #0066cc;    /* Azul Saneamento / Limpeza */
+            --accent: #25d366;       /* Verde WhatsApp / Urgência */
+            --light: #f4f7fa;        /* Fundo claro para seções */
+            --text-dark: #2d3748;    /* Cor de texto legível */
+        }
+
+        body {
+            color: var(--text-dark);
+            background-color: #ffffff;
+            line-height: 1.6;
+        }
+
+        /* Menu de Navegação Superior */
+        header {
+            background-color: #ffffff;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.08);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+        }
+
+        .logo {
+            font-weight: 700;
+            font-size: 1.5rem;
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .logo span {
+            color: var(--secondary);
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-menu a {
+            color: var(--text-dark);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: color 0.3s;
+        }
+
+        .nav-menu a:hover {
+            color: var(--secondary);
+        }
+
+        .nav-btn {
+            background-color: var(--accent);
+            color: white !important;
+            padding: 0.6rem 1.2rem;
+            border-radius: 5px;
+            box-shadow: 0 4px 10px rgba(37, 211, 102, 0.3);
+            transition: transform 0.2s !important;
+        }
+
+        .nav-btn:hover {
+            transform: translateY(-2px);
+        }
+
+        /* Seção de Entrada (Hero) */
+        .hero {
+            background: linear-gradient(135deg, rgba(10, 37, 64, 0.95) 0%, rgba(0, 102, 204, 0.9) 100%), 
+                        url('https://images.unsplash.com/photo-1581094288338-2314dddb7ece?auto=format&fit=crop&q=80&w=1200') no-repeat center center/cover;
+            min-height: 85vh;
+            color: white;
+            display: flex;
+            align-items: center;
+            padding: 8rem 2rem 4rem 2rem;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3.2rem;
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            color: #e2e8f0;
+            margin-bottom: 2.5rem;
+        }
+
+        .cta-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.8rem;
+            background-color: var(--accent);
+            color: white;
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.1rem;
+            box-shadow: 0 5px 20px rgba(37, 211, 102, 0.4);
+            transition: all 0.3s;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(37, 211, 102, 0.6);
+        }
+
+        /* Seções Gerais */
+        section {
+            padding: 6rem 2rem;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.2rem;
+            color: var(--primary);
+            margin-bottom: 3.5rem;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 70px;
+            height: 4px;
+            background-color: var(--secondary);
+            margin: 12px auto 0 auto;
+            border-radius: 2px;
+        }
+
+        /* Grid de Serviços Ofertados */
+        .services-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .service-card {
+            background: white;
+            padding: 3rem 2rem;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            transition: all 0.3s;
+            border-top: 5px solid transparent;
+        }
+
+        .service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 35px rgba(0,64,128,0.1);
+            border-top-color: var(--secondary);
+        }
+
+        .service-icon {
+            font-size: 3rem;
+            color: var(--secondary);
+            margin-bottom: 1.5rem;
+        }
+
+        .service-card h3 {
+            font-size: 1.35rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .service-card p {
+            color: #718096;
+            font-size: 0.95rem;
+        }
+
+        /* Seção Sobre / Diferenciais */
+        .about-section {
+            background-color: var(--light);
+        }
+
+        .about-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .about-text h3 {
+            font-size: 1.8rem;
+            color: var(--primary);
+            margin-bottom: 1.2rem;
+        }
+
+        .about-text p {
+            color: #4a5568;
+            margin-bottom: 1.5rem;
+        }
+
+        .features-list {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+        }
+
+        .feature-item {
+            background: white;
+            padding: 1.2rem;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.02);
+        }
+
+        .feature-item i {
+            color: var(--secondary);
+            font-size: 1.2rem;
+        }
+
+        /* Contato & Localização */
+        .contact-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .contact-box {
+            background: var(--light);
+            padding: 1.5rem;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            border-left: 5px solid var(--secondary);
+        }
+
+        .contact-box i {
+            font-size: 2rem;
+            color: var(--secondary);
+        }
+
+        .contact-box a {
+            color: var(--text-dark);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.2s;
+        }
+
+        .contact-box a:hover {
+            color: var(--secondary);
+        }
+
+        .map-placeholder {
+            background-color: #edf2f7;
+            border-radius: 12px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 3rem;
+            text-align: center;
+            border: 1px dashed #cbd5e0;
+        }
+
+        /* Botão Flutuante Whatsapp */
+        .whatsapp-fixed {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: var(--accent);
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+            z-index: 1000;
+            transition: transform 0.3s;
+        }
+
+        .whatsapp-fixed:hover {
+            transform: scale(1.1);
+        }
+
+        /* Rodapé */
+        footer {
+            background-color: var(--primary);
+            color: #a0aec0;
+            padding: 4rem 2rem 2rem 2rem;
+            font-size: 0.9rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            gap: 2.5rem;
+            border-bottom: 1px solid #2d3748;
+            padding-bottom: 2.5rem;
+        }
+
+        .footer-logo {
+            color: white;
+            font-weight: 700;
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-copy {
+            text-align: center;
+            padding-top: 2rem;
+            font-size: 0.8rem;
+        }
+
+        /* Ajustes Mobile */
+        @media (max-width: 768px) {
+            .nav-menu { display: none; } /* Ocultado menu complexo em mobile para simplicidade */
+            .hero h1 { font-size: 2.2rem; }
+            .about-container, .contact-container { grid-template-columns: 1fr; gap: 2.5rem; }
+            .features-list { grid-template-columns: 1fr; }
+            .footer-content { flex-direction: column; text-align: center; align-items: center; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Cabeçalho & Menu Baseado nos Principais Serviços -->
+    <header>
+        <div class="nav-container">
+            <div class="logo"><i class="fa-solid fa-droplet"></i> FG <span>Desentupidora</span></div>
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="#home">Início</a></li>
+                    <li><a href="#desentupimento">Desentupimento</a></li>
+                    <li><a href="#dedetizacao">Dedetização / Imunização</a></li>
+                    <li><a href="#hidrojateamento">Hidrojateamento</a></li>
+                    <li><a href="#sobre">Quem Somos</a></li>
+                    <li><a href="#contato">Contato</a></li>
+                    <li><a href="https://wa.me/5521999999999" target="_blank" class="nav-btn"><i class="fa-brands fa-whatsapp"></i> Chamar Agora</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Seção Principal (Hero Call-to-Action) -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Soluções Rápidas de Desentupimento e Controle de Pragas</h1>
+            <p>Atendimento emergencial residencial, comercial e industrial no Rio de Janeiro. Infraestrutura moderna, equipe especializada e suporte imediato.</p>
+            <a href="https://wa.me/5521999999999" target="_blank" class="cta-button">
+                <i class="fa-brands fa-whatsapp"></i> Solicitar Técnico Técnico Emergencial
+            </a>
+        </div>
+    </section>
+
+    <!-- Seção de Serviços Principais (Tópicos do Topo) -->
+    <section id="servicos">
+        <h2 class="section-title">Nossos Serviços Especializados</h2>
+        <div class="services-grid">
+            
+            <!-- Card 1 -->
+            <div class="service-card" id="desentupimento">
+                <div class="service-icon"><i class="fa-solid fa-pipe-valve"></i></div>
+                <h3>Desentupimento Geral</h3>
+                <p>Desobstrução rápida e limpa de pias, ralos, vasos sanitários, redes de esgoto e galerias pluviais sem quebrar estruturas.</p>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="service-card" id="dedetizacao">
+                <div class="service-icon"><i class="fa-solid fa-spray-can-sparkles"></i></div>
+                <h3>Imunização e Controle</h3>
+                <p>Dedetização, descupinização e desratização eficazes. Controle microbiológico completo utilizando produtos certificados e seguros.</p>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="service-card" id="hidrojateamento">
+                <div class="service-icon"><i class="fa-solid fa-faucet-drip"></i></div>
+                <h3>Hidrojateamento</h3>
+                <p>Limpeza profunda por alta pressão para tubulações industriais e comerciais, removendo crostas de gordura e resíduos densos.</p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Seção Institucional (Sobre Nós) -->
+    <section id="sobre" class="about-section">
+        <div class="about-container">
+            <div class="about-text">
+                <h3>FG Desentupidora e Imunização LTDA</h3>
+                <p>Atuando no mercado do Rio de Janeiro desde 2017, consolidamos nossa marca através da precisão técnica, cumprimento rigoroso de prazos e respeito socioambiental.</p>
+                <p>Contamos com frota própria e equipamentos de última geração prontos para sanar imprevistos hidráulicos e sanitários de qualquer proporção, garantindo o bem-estar e a conformidade regulatória do seu espaço.</p>
+                
+                <div class="features-list">
+                    <div class="feature-item"><i class="fa-solid fa-shield-halved"></i> <span>Garantia por Escrito</span></div>
+                    <div class="feature-item"><i class="fa-solid fa-user-check"></i> <span>Equipe Homologada</span></div>
+                    <div class="feature-item"><i class="fa-solid fa-clock"></i> <span>Pronto Atendimento</span></div>
+                    <div class="feature-item"><i class="fa-solid fa-file-invoice-dollar"></i> <span>Orçamento Transparente</span></div>
+                </div>
+            </div>
+            
+            <div style="text-align: center;">
+                <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&q=80&w=500" alt="Equipe Técnica Profissional" style="width: 100%; max-width: 400px; border-radius: 15px; box-shadow: 0 10px 25px rgba(0,0,0,0.1);">
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção de Contato e Localização Real -->
+    <section id="contato">
+        <h2 class="section-title">Canais de Atendimento</h2>
+        <div class="contact-container">
+            
+            <div class="contact-info">
+                <p>Fale diretamente com nossa central de triagem para despacho imediato de equipes técnicas.</p>
+                
+                <div class="contact-box">
+                    <i class="fa-brands fa-whatsapp"></i>
+                    <div>
+                        <strong>Central de Plantão (WhatsApp):</strong><br>
+                        <a href="https://wa.me/5521999999999" target="_blank">(21) 99999-9999</a>
+                    </div>
+                </div>
+
+                <div class="contact-box">
+                    <i class="fa-solid fa-envelope"></i>
+                    <div>
+                        <strong>E-mail Administrativo:</strong><br>
+                        <a href="mailto:grupo@sofcost.com.br">grupo@sofcost.com.br</a>
+                    </div>
+                </div>
+
+                <div class="contact-box">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <div>
+                        <strong>Base Operacional:</strong><br>
+                        Rua Clapp Filho, 00304 - Loja B - Cachambi<br>
+                        Rio de Janeiro - RJ | CEP: 20785-270
+                    </div>
+                </div>
+            </div>
+
+            <div class="map-placeholder">
+                <i class="fa-solid fa-map-location-dot" style="font-size: 3.5rem; color: var(--secondary); margin-bottom: 1rem;"></i>
+                <h4>Área de Cobertura Integrada</h4>
+                <p style="color: #718096; font-size: 0.9rem; margin-top: 0.5rem; max-width: 300px;">Base estratégica sediada no bairro Cachambi, permitindo deslocamento ágil para toda a Zona Norte, Centro e regiões adjacentes do RJ.</p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Botão Flutuante Fixo do WhatsApp -->
+    <a href="https://wa.me/5521999999999" class="whatsapp-fixed" target="_blank" title="Falar com Técnico">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <!-- Rodapé -->
+    <footer>
+        <div class="footer-content">
+            <div>
+                <div class="footer-logo">FG Desentupidora</div>
+                <p style="font-size: 0.8rem; max-width: 350px;">Razão Social: Fg Desentupidora e Imunizacao LTDA<br>CNPJ: 29.260.931/0001-00<br>Empresa Optante pelo Simples Nacional.</p>
+            </div>
+            <div>
+                <h4 style="color: white; margin-bottom: 1rem;">Nossos Serviços</h4>
+                <ul style="list-style: none; font-size: 0.85rem; display: flex; flex-direction: column; gap: 0.5rem;">
+                    <li>Desentupimento de Esgoto</li>
+                    <li>Imunização Química / Controle de Pragas</li>
+                    <li>Limpeza de Caixa d'Água</li>
+                    <li>Hidrojateamento Preventivo</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-copy">
+            <p>&copy; 2026 FG Desentupidora. Todos os direitos reservados. Soluções Modernas em Saneamento.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
